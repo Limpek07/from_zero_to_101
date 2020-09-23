@@ -1,4 +1,4 @@
-**From ZERO to 101**
+**From ZERO to 101 in Test automation**
 ====================
 This repository is for those, who just began to learn test automation, cannot create a test framework on their own, but would like to practice creating tests, using assertions, etc.
   
