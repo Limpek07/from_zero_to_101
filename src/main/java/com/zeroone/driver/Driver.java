@@ -13,7 +13,7 @@ public class Driver {
     /**
      * Returns a working ChromeDriver.
      *
-     * @return the ChromedDiver
+     * @return the ChromeDiver
      */
     public static ChromeDriver getChromeDriver() {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver/chromedriver.exe");
