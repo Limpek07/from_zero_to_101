@@ -9,6 +9,7 @@ This repository is for those, who just began to learn test automation, cannot cr
 - Selenium
 - AssertJ (for assertions)
 - TestNG
+- Log4J
 --------------------------------------
 
 **You will need:**
