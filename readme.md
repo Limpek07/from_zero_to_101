@@ -10,6 +10,10 @@ This repository is for those, who just began to learn test automation, cannot cr
 - AssertJ (for assertions)
 - TestNG
 - Log4J
+
+**IntelliJ plugins**
+- Cucumber for Java
+- Gherkin
 --------------------------------------
 
 **You will need:**
