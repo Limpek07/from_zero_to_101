@@ -8,6 +8,11 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import static java.time.Duration.ofSeconds;
 import static org.openqa.selenium.support.ui.ExpectedConditions.presenceOfElementLocated;
 
+/**
+ * Main page related step definitions.
+ *
+ * @author Zoltan_Limpek
+ */
 public class MainPageStep extends BaseStepDefinition {
 
     @And("I close the cookie policy overlay")
