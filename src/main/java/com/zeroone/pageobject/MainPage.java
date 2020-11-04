@@ -5,10 +5,10 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
-import static java.time.Duration.ofSeconds;
-import static org.openqa.selenium.support.ui.ExpectedConditions.presenceOfElementLocated;
+import static com.zeroone.util.WebElementHandler.clickOn;
+import static com.zeroone.util.WebElementHandler.fill;
+import static com.zeroone.util.WebElementHandler.waitForElementToBePresent;
 
 /**
  * Page object for the Main page.
@@ -30,20 +30,19 @@ public class MainPage {
     private WebElement closeCookiePolicyOverlayButton;
 
     public void waitForCookiePolicyOverlayButton() {
-        WebDriverWait waiter = new WebDriverWait(driver, 10);
-        waiter.withTimeout(ofSeconds(5)).until(presenceOfElementLocated(legalNoticeCloseButton));
+        waitForElementToBePresent("legal notice close button", driver, legalNoticeCloseButton);
     }
 
     public void clickOnCookiePolicyOverlayButton() {
-        closeCookiePolicyOverlayButton.click();
+        clickOn("close cookie policy overlay button", driver, closeCookiePolicyOverlayButton);
     }
 
     public void fillHeaderSearchFieldWith(String searchTarget) {
-        headerSearchField.sendKeys(searchTarget);
+        fill("header search field", searchTarget, headerSearchField);
     }
 
     public void clickOnHeaderSearchButton() {
-        headerSearchButton.click();
+        clickOn("header search button", driver, headerSearchButton);
     }
 
     public MainPage(ChromeDriver driver) {
