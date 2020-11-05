@@ -32,8 +32,8 @@ public class SearchResultsPage {
         waitForElementToBeVisible("search header container", driver, searchHeaderContainer);
     }
 
-    public void validateFirstCourseLinkUrl(String expectedUrl) {
-        assertThat(courses.get(0).findElement(link).getAttribute("href")).isEqualTo(expectedUrl);
+    public void validateCourseLinkUrlNumber(int courseIndex, String expectedUrl) {
+        assertThat(courses.get(courseIndex - 1).findElement(link).getAttribute("href")).isEqualTo(expectedUrl);
     }
 
     public void validateNumberOfCourses(int expectedNumberOfCourses) {
