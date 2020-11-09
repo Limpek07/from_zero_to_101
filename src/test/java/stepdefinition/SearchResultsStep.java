@@ -23,11 +23,11 @@ public class SearchResultsStep extends BaseStepDefinition {
 
     @And("course number {int} should point to {string} url")
     public void course_number_x_should_point_to_y_url(int courseIndex, String url) {
-        new SearchResultsPage(driver).validateCourseLinkUrlNumber(courseIndex, url);
+        new SearchResultsPage(driver).validateLinkUrlOfCourseNumber(courseIndex, url);
     }
 
-    @And("the title of the second course should be {string}")
-    public void the_title_of_the_second_course_should_be_x(String courseTitle) {
-        new SearchResultsPage(driver).validateSecondCourseTitle(courseTitle);
+    @And("the title of course number {int} should be {string}")
+    public void the_title_of_course_number_x_should_be_y(int courseIndex, String courseTitle) {
+        new SearchResultsPage(driver).validateTitleOfCourseNumber(courseIndex, courseTitle);
     }
 }

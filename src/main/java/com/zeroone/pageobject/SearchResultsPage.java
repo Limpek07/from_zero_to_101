@@ -8,8 +8,10 @@ import org.openqa.selenium.support.PageFactory;
 
 import java.util.List;
 
+import static com.zeroone.util.WebElementAssertions.elementHasAttributeEqualsTo;
+import static com.zeroone.util.WebElementAssertions.elementHasText;
+import static com.zeroone.util.WebElementAssertions.listHasSizeOf;
 import static com.zeroone.util.WebElementHandler.waitForElementToBeVisible;
-import static org.assertj.core.api.Assertions.assertThat;
 
 /**
  * Page object for the Search Results page.
@@ -28,20 +30,28 @@ public class SearchResultsPage {
     @FindBy(css = "[class*='course-list--container--'] [class*='popper--popper--']")
     private List<WebElement> courses;
 
+    private WebElement linkOfCourseNumber(int courseIndex) {
+        return courses.get(courseIndex - 1).findElement(link);
+    }
+
+    private WebElement titleOfCourseNumber(int courseIndex) {
+        return courses.get(courseIndex - 1).findElement(title);
+    }
+
     public void waitForSearchHeaderContainerToBeVisible() {
         waitForElementToBeVisible("search header container", driver, searchHeaderContainer);
     }
 
-    public void validateCourseLinkUrlNumber(int courseIndex, String expectedUrl) {
-        assertThat(courses.get(courseIndex - 1).findElement(link).getAttribute("href")).isEqualTo(expectedUrl);
+    public void validateLinkUrlOfCourseNumber(int courseIndex, String expectedUrl) {
+        elementHasAttributeEqualsTo(expectedUrl, linkOfCourseNumber(courseIndex), "href", "course link");
     }
 
     public void validateNumberOfCourses(int expectedNumberOfCourses) {
-        assertThat(courses.size()).isEqualTo(expectedNumberOfCourses);
+        listHasSizeOf(expectedNumberOfCourses, courses, "course list");
     }
 
-    public void validateSecondCourseTitle(String expectedCourseTitle) {
-        assertThat(courses.get(1).findElement(title).getText()).isEqualTo(expectedCourseTitle);
+    public void validateTitleOfCourseNumber(int courseIndex, String expectedCourseTitle) {
+        elementHasText(titleOfCourseNumber(courseIndex), expectedCourseTitle, "course title");
     }
 
     public SearchResultsPage(ChromeDriver driver) {
