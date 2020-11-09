@@ -1,5 +1,6 @@
 package runner;
 
+import cucumber.api.CucumberOptions;
 import cucumber.api.testng.CucumberFeatureWrapper;
 import cucumber.api.testng.PickleEventWrapper;
 import cucumber.api.testng.TestNGCucumberRunner;
@@ -12,7 +13,11 @@ import org.testng.annotations.Test;
 
 import static com.zeroone.driver.Driver.closeDriver;
 import static com.zeroone.driver.Driver.initDriver;
-
+@CucumberOptions(
+        plugin = "pretty",
+        glue = "stepdefinition",
+        features = "src/test/resources/feature"
+)
 public class Runner {
     private TestNGCucumberRunner testNGCucumberRunner;
 
