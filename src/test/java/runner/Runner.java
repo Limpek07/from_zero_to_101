@@ -13,6 +13,7 @@ import org.testng.annotations.Test;
 
 import static com.zeroone.driver.Driver.closeDriver;
 import static com.zeroone.driver.Driver.initDriver;
+
 @CucumberOptions(
         plugin = "pretty",
         glue = "stepdefinition",
@@ -39,7 +40,7 @@ public class Runner {
         initDriver();
     }
 
-    @Test(groups = "cucumber", dataProvider = "scenarios")
+    @Test(dataProvider = "scenarios")
     public void runScenario(PickleEventWrapper pickleWrapper, CucumberFeatureWrapper featureWrapper) throws Throwable {
         testNGCucumberRunner.runScenario(pickleWrapper.getPickleEvent());
     }
