@@ -21,14 +21,11 @@ public class Driver {
     }
 
     public static void initDriver() {
-        if (driver == null) {
-            System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver/chromedriver.exe");
-            driver = new ChromeDriver();
-        }
+        System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver/chromedriver.exe");
+        driver = new ChromeDriver();
     }
 
     public static void closeDriver() {
         driver.quit();
-        driver = null;
     }
 }
