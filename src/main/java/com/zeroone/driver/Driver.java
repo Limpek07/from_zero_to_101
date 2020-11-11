@@ -9,6 +9,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
  * @author Zoltan_Limpek
  */
 public class Driver {
+    private static ChromeDriver driver;
 
     /**
      * Returns a working ChromeDriver.
@@ -16,7 +17,15 @@ public class Driver {
      * @return the ChromeDiver
      */
     public static ChromeDriver getChromeDriver() {
+        return driver;
+    }
+
+    public static void initDriver() {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver/chromedriver.exe");
-        return new ChromeDriver();
+        driver = new ChromeDriver();
+    }
+
+    public static void closeDriver() {
+        driver.quit();
     }
 }
