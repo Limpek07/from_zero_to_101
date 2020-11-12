@@ -10,5 +10,5 @@ import static com.zeroone.driver.Driver.getChromeDriver;
  * @author Zoltan_Limpek
  */
 class BaseStepDefinition {
-    static ChromeDriver driver = getChromeDriver();
+    ChromeDriver driver = getChromeDriver();
 }

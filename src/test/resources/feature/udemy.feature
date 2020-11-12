@@ -1,21 +1,14 @@
 Feature: Udemy test
 
-  Scenario: Basic search test
+  Scenario Outline: Basic search for "<searchTarget>"
     When I navigate to "https://www.udemy.com" url
     And I close the cookie policy overlay
-    And I search for "selenium" courses
+    And I search for "<searchTarget>" courses
     Then I should be redirected to the search results page
     And I should have 20 courses on the page
-    And course number 1 should point to "https://www.udemy.com/course/selenium-real-time-examplesinterview-questions/" url
-    And the title of course number 2 should be "Selenium WebDriver Training with Java and Many Live Projects"
-    And I close the browser
-
-  Scenario: Basic search test 2
-    When I navigate to "https://www.udemy.com" url
-    And I close the cookie policy overlay
-    And I search for "java programming" courses
-    Then I should be redirected to the search results page
-    And I should have 20 courses on the page
-    And course number 1 should point to "https://www.udemy.com/course/java-the-complete-java-developer-course/" url
-    And the title of course number 2 should be "Java Programming for Complete Beginners"
-    And I close the browser
+    And course number <linkCourseIndex> should point to "<linkUrl>" url
+    And the title of course number <titleCourseIndex> should be "<title>"
+    Examples:
+      | searchTarget     | linkCourseIndex | linkUrl                                                                      | titleCourseIndex | title                                                        |
+      | selenium         | 1               | https://www.udemy.com/course/selenium-real-time-examplesinterview-questions/ | 2                | Selenium WebDriver Training with Java and Many Live Projects |
+      | java programming | 3               | https://www.udemy.com/course/java-in-depth-become-a-complete-java-engineer/  | 4                | Java Programming: Complete Beginner to Advanced              |
