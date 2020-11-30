@@ -20,5 +20,6 @@ This repository is for those, who just began to learn test automation, cannot cr
 **You will need:**
 - Java 8
 - Gradle 5.4.1
+- Git
 
 Both of these should be installed on your workstation with environment variables set. 
