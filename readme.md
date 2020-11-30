@@ -18,7 +18,7 @@ This repository is for those, who just began to learn test automation, cannot cr
 --------------------------------------
 
 **You will need:**
-- Java 8
+- Java 8 (JDK)
 - Gradle 5.4.1
 - Git
 
