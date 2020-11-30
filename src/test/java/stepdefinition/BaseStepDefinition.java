@@ -10,5 +10,6 @@ import static com.zeroone.driver.Driver.getChromeDriver;
  * @author Zoltan_Limpek
  */
 class BaseStepDefinition {
+    static final String BASE_URL = "https://www.udemy.com";
     ChromeDriver driver = getChromeDriver();
 }

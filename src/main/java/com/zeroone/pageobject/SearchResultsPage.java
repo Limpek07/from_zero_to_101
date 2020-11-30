@@ -11,6 +11,8 @@ import java.util.List;
 import static com.zeroone.util.WebElementAssertions.elementHasAttributeEqualsTo;
 import static com.zeroone.util.WebElementAssertions.elementHasText;
 import static com.zeroone.util.WebElementAssertions.listHasSizeOf;
+import static com.zeroone.util.WebElementHandler.clickOn;
+import static com.zeroone.util.WebElementHandler.mouseOver;
 import static com.zeroone.util.WebElementHandler.waitForElementToBeVisible;
 
 /**
@@ -52,6 +54,13 @@ public class SearchResultsPage {
 
     public void validateTitleOfCourseNumber(int courseIndex, String expectedCourseTitle) {
         elementHasText(titleOfCourseNumber(courseIndex), expectedCourseTitle, "course title");
+    }
+
+    public void clickOnCourseNumber(int courseIndex) {
+        String elementName = "course number " + courseIndex;
+
+        mouseOver(elementName, driver, linkOfCourseNumber(courseIndex));
+        clickOn(elementName, driver, linkOfCourseNumber(courseIndex));
     }
 
     public SearchResultsPage(ChromeDriver driver) {

@@ -4,6 +4,7 @@ import com.zeroone.logging.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import static java.time.Duration.ofSeconds;
@@ -42,6 +43,12 @@ public final class WebElementHandler {
         WebDriverWait waiter = new WebDriverWait(driver, DEFAULT_TIMEOUT);
         waiter.withTimeout(ofSeconds(WAIT_TIMEOUT)).until(elementToBeClickable(element));
         element.click();
+    }
+
+    public static void mouseOver(String elementName, ChromeDriver driver, WebElement element) {
+        LOGGER.info("Hovering mouse over " + elementName + ".");
+        Actions actions = new Actions(driver);
+        actions.moveToElement(element).build().perform();
     }
 
     public static void fill(String elementName, String text, WebElement element) {
