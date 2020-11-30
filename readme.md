@@ -12,8 +12,9 @@ This repository is for those, who just began to learn test automation, cannot cr
 - Log4J
 
 **IntelliJ plugins**
-- Cucumber for Java
-- Gherkin
+- *Cucumber for Java
+- *Gherkin
+- String manipulation
 --------------------------------------
 
 **You will need:**
