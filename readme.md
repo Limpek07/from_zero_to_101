@@ -23,3 +23,5 @@ This repository is for those, who just began to learn test automation, cannot cr
 - Git
 
 All of these should be installed on your workstation with environment variables set. 
+
+Related video series in Hungarian here: https://www.youtube.com/playlist?list=PLPLCD3HyRMaktbKkl7d4tisbLzQb-ug2o
